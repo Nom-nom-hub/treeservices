@@ -24,10 +24,10 @@ const themeCardClasses: Record<string, {
     shimmer: 'from-green-500/0 via-green-400/20 to-green-500/0',
   },
   light: {
-    border: 'border-amber-500/30', borderHover: 'hover:border-amber-500', glow: 'hover:shadow-amber-600/30',
-    previewBg: 'bg-gradient-to-br from-amber-100 via-stone-50 to-green-50', previewAccent: 'bg-amber-600',
-    watermark: 'text-amber-300/20', badge: 'bg-amber-100 border-amber-300', badgeText: 'text-amber-700',
-    shimmer: 'from-amber-500/0 via-amber-400/20 to-amber-500/0',
+    border: 'border-green-500/30', borderHover: 'hover:border-green-500', glow: 'hover:shadow-green-600/30',
+    previewBg: 'bg-gradient-to-br from-green-100 via-stone-50 to-green-50', previewAccent: 'bg-green-600',
+    watermark: 'text-green-300/20', badge: 'bg-green-100 border-green-300', badgeText: 'text-green-700',
+    shimmer: 'from-green-500/0 via-green-400/20 to-green-500/0',
   },
   minimal: {
     border: 'border-blue-500/30', borderHover: 'hover:border-blue-500', glow: 'hover:shadow-blue-500/30',
@@ -36,10 +36,10 @@ const themeCardClasses: Record<string, {
     shimmer: 'from-blue-500/0 via-blue-400/20 to-blue-500/0',
   },
   bold: {
-    border: 'border-amber-500/30', borderHover: 'hover:border-amber-500', glow: 'hover:shadow-amber-500/30',
-    previewBg: 'bg-gradient-to-br from-blue-950 via-slate-900 to-indigo-950', previewAccent: 'bg-amber-500',
-    watermark: 'text-amber-600/10', badge: 'bg-amber-500/10 border-amber-500/30', badgeText: 'text-amber-400',
-    shimmer: 'from-amber-500/0 via-amber-400/20 to-amber-500/0',
+    border: 'border-green-500/30', borderHover: 'hover:border-green-500', glow: 'hover:shadow-green-500/30',
+    previewBg: 'bg-gradient-to-br from-blue-950 via-slate-900 to-indigo-950', previewAccent: 'bg-green-500',
+    watermark: 'text-green-600/10', badge: 'bg-green-500/10 border-green-500/30', badgeText: 'text-green-400',
+    shimmer: 'from-green-500/0 via-green-400/20 to-green-500/0',
   },
   bw: {
     border: 'border-black/30', borderHover: 'hover:border-black', glow: 'hover:shadow-black/20',
