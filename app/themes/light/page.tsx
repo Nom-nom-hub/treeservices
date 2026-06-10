@@ -3,7 +3,8 @@
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, MapPin, ChevronRight, Axe, Scissors, Zap, AlertCircle, Trash2, Check, X, ArrowUp, MessageCircle, Sun, Trees, ArrowLeft, Trophy } from 'lucide-react';
+import { Phone, MapPin, ChevronRight, Axe, Scissors, Zap, AlertCircle, Trash2, Check, X, ArrowUp, MessageCircle, Sun, ArrowLeft, Trophy } from 'lucide-react';
+import Logo from '@/app/logo';
 import { services as serviceData, serviceAreas, portfolioImages } from '@/app/data';
 import AnimatedCounter from '@/app/animated-counter';
 
@@ -31,8 +32,7 @@ export default function LightTheme() {
           <div className="flex items-center gap-4">
             <Link href="/" className="text-xs text-stone-500 hover:text-green-600 transition-colors flex items-center gap-1"><ArrowLeft className="w-3 h-3" /> Showcase</Link>
             <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); closeMobileMenu(); }} className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center shadow-md"><Trees className="w-6 h-6 text-white" /></div>
-              <div><p className="text-lg font-bold text-stone-800 leading-tight">Tree Care of SWFL</p><p className="text-xs text-green-600 font-semibold">Licensed &amp; Insured</p></div>
+              <Logo className="h-12 w-auto" />
             </a>
           </div>
           <div className="hidden md:flex items-center gap-8">
@@ -143,7 +143,7 @@ export default function LightTheme() {
 
       <footer className="bg-stone-900 text-stone-400 py-12 px-4">
         <div className="max-w-7xl mx-auto"><div className="grid md:grid-cols-4 gap-8 mb-8">
-          <div className="reveal"><div className="flex items-center gap-3 mb-4"><div className="w-10 h-10 bg-green-600 rounded-xl flex items-center justify-center"><Trees className="w-6 h-6 text-white" /></div><p className="text-lg font-bold text-white">Tree Care of SWFL</p></div><p className="text-sm leading-relaxed">Professional tree care serving Southwest Florida since 1991. Licensed &amp; insured.</p></div>
+          <div className="reveal"><Logo className="h-12 w-auto mb-4 brightness-0 invert" /><p className="text-sm leading-relaxed">Professional tree care serving Southwest Florida since 1991. Licensed &amp; insured.</p></div>
           <div className="reveal" style={{ transitionDelay: '0.1s' }}><h4 className="font-semibold text-white mb-4">Services</h4><ul className="space-y-2 text-sm">{['Tree Removal','Tree Trimming','Stump Grinding','Emergency Service'].map(i => <li key={i}><a href="#services" className="hover:text-green-400 transition-colors">{i}</a></li>)}</ul></div>
           <div className="reveal" style={{ transitionDelay: '0.2s' }}><h4 className="font-semibold text-white mb-4">Quick Links</h4><ul className="space-y-2 text-sm">{['Services','Service Areas','Portfolio','Contact'].map(i => <li key={i}><a href={`#${i.toLowerCase().replace(' ','-').replace('service-areas','areas')}`} className="hover:text-green-400 transition-colors">{i}</a></li>)}</ul></div>
           <div className="reveal" style={{ transitionDelay: '0.3s' }}><h4 className="font-semibold text-white mb-4">Contact</h4><a href="tel:2399440073" className="block text-sm mb-2 hover:text-green-400 transition-colors">(239) 944-0073</a><a href="sms:2399440073" className="block text-sm hover:text-green-400 transition-colors">Text Us</a></div>
