@@ -13,8 +13,52 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tree Care of SWFL LLC | Professional Tree Services in Southwest Florida",
-  description: "Expert tree removal, trimming, and landscaping services in Cape Coral, Fort Myers, and surrounding areas. 33+ years of experience. 24/7 emergency service.",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://treecareofswfl.vercel.app"
+  ),
+  title: "Tree Care of SWFL LLC | Professional Tree Services — Cape Coral, FL",
+  description:
+    "33+ years of professional tree removal, trimming, stump grinding & 24/7 emergency tree services. Serving Cape Coral, Fort Myers, Naples & all Southwest Florida. Licensed & insured.",
+  keywords: [
+    "tree service",
+    "tree removal",
+    "tree trimming",
+    "stump grinding",
+    "emergency tree service",
+    "arborist",
+    "Cape Coral",
+    "Fort Myers",
+    "Naples",
+    "Southwest Florida",
+    "landscaping",
+    "tree care",
+    "SWFL",
+  ],
+  authors: [{ name: "Tree Care of SWFL LLC" }],
+  robots: "index, follow",
+  openGraph: {
+    title: "Tree Care of SWFL LLC | Professional Tree Services",
+    description:
+      "33+ years of professional tree removal, trimming, stump grinding & 24/7 emergency services in Southwest Florida.",
+    type: "website",
+    locale: "en_US",
+    siteName: "Tree Care of SWFL LLC",
+    images: [
+      {
+        url: "/old-site-1.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Tree Care of SWFL — Professional Tree Services",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tree Care of SWFL LLC | Professional Tree Services",
+    description:
+      "33+ years of professional tree removal, trimming, stump grinding & 24/7 emergency services in Southwest Florida.",
+    images: ["/old-site-1.jpg"],
+  },
   icons: {
     icon: "/favicon.svg",
   },
