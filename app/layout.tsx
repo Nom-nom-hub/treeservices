@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     siteName: "Tree Care of SWFL LLC",
     images: [
       {
-        url: "/old-site-1.jpg",
+        url: "/IMG_0477.jpg",
         width: 1200,
         height: 630,
         alt: "Tree Care of SWFL — Professional Tree Services",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title: "Tree Care of SWFL LLC | Professional Tree Services",
     description:
       "33+ years of professional tree removal, trimming, stump grinding & 24/7 emergency services in Southwest Florida.",
-    images: ["/old-site-1.jpg"],
+    images: ["/IMG_0477.jpg"],
   },
   icons: {
     icon: "/favicon.svg",
