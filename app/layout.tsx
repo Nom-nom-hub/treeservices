@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Tree Care of SWFL LLC | Professional Tree Services in Southwest Florida",
   description: "Expert tree removal, trimming, and landscaping services in Cape Coral, Fort Myers, and surrounding areas. 33+ years of experience. 24/7 emergency service.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
