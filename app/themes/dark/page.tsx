@@ -173,7 +173,7 @@ export default function Home() {
         <section id="contact" className="py-20 px-4 bg-gradient-to-b from-gray-950 to-black">
           <div className="max-w-4xl mx-auto text-center reveal">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Ready to Transform Your Landscape?</h2>
-            <p className="text-xl text-gray-300 mb-12 leading-relaxed max-w-2xl mx-auto">Get a free, no-obligation estimate from our team of certified arborists. Call or text us — we&apos;re available 24/7 for emergency services.</p>
+            <p className="text-xl text-gray-300 mb-12 leading-relaxed max-w-2xl mx-auto">Get a free, no-obligation estimate from our team of arborists. Call or text us — we&apos;re available 24/7 for emergency services.</p>
             <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
               <a href="tel:2399440073" className="group bg-gray-900 border border-green-600/30 rounded-2xl p-8 hover:shadow-xl hover:shadow-green-600/20 hover:border-green-500 transition-all hover:-translate-y-1">
                 <div className="w-16 h-16 bg-green-600/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-green-600/30 group-hover:scale-110 transition-all"><Phone className="w-8 h-8 text-green-500" /></div>

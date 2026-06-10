@@ -179,7 +179,7 @@ export default function BlackWhiteTheme() {
         <section id="contact" className="py-20 px-4 bg-gray-50">
           <div className="max-w-4xl mx-auto text-center reveal">
             <h2 className="text-4xl md:text-5xl font-black text-black mb-6 tracking-tight">Ready to Transform Your Landscape?</h2>
-            <p className="text-xl text-gray-400 mb-12 leading-relaxed max-w-2xl mx-auto font-light">Get a free, no-obligation estimate from our team of certified arborists. Call or text us — we&apos;re available 24/7 for emergency services.</p>
+            <p className="text-xl text-gray-400 mb-12 leading-relaxed max-w-2xl mx-auto font-light">Get a free, no-obligation estimate from our team of arborists. Call or text us — we&apos;re available 24/7 for emergency services.</p>
             <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
               <a href="tel:2399440073" className="group bg-white border-2 border-black p-8 hover:shadow-2xl hover:shadow-black/10 transition-all hover:-translate-y-1">
                 <div className="w-16 h-16 bg-black flex items-center justify-center mx-auto mb-4 group-hover:bg-gray-800 group-hover:scale-110 transition-all"><Phone className="w-8 h-8 text-white" /></div>
