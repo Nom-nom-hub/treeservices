@@ -79,10 +79,10 @@ export default function LightTheme() {
               </div>
               <div className="relative hidden md:grid grid-cols-2 gap-3 reveal h-96">
                 <div className="relative rounded-3xl overflow-hidden shadow-lg border border-stone-200">
-                  <Image src="/IMG_1361.jpeg" alt="Tree Care of SWFL — Professional Equipment" fill className="object-cover hover:scale-105 transition-transform duration-700" sizes="(max-width: 768px) 50vw, 300px" />
+                  <Image src="/IMG_1361.jpeg" alt="Tree Care of SWFL — Professional Equipment" fill className="object-contain hover:scale-105 transition-transform duration-700" sizes="(max-width: 768px) 50vw, 300px" />
                 </div>
                 <div className="relative rounded-3xl overflow-hidden shadow-lg border border-stone-200">
-                  <Image src="/IMG_1524.jpeg" alt="Tree Care of SWFL — Our Team" fill className="object-cover hover:scale-105 transition-transform duration-700" sizes="(max-width: 768px) 50vw, 300px" />
+                  <Image src="/IMG_1524.jpeg" alt="Tree Care of SWFL — Our Team" fill className="object-contain hover:scale-105 transition-transform duration-700" sizes="(max-width: 768px) 50vw, 300px" />
                 </div>
               </div>
             </div>
