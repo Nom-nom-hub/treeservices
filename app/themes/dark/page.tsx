@@ -1,8 +1,9 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, MapPin, Leaf, ChevronRight, Axe, Scissors, Zap, AlertCircle, Trash2, Check, X, ArrowUp, MessageCircle } from 'lucide-react';
+import { Phone, MapPin, Leaf, ChevronRight, Axe, Scissors, Zap, AlertCircle, Trash2, Check, X, ArrowUp, MessageCircle, ArrowLeft } from 'lucide-react';
 import Logo from '@/app/logo';
 import { services, serviceAreas, portfolioImages } from '@/app/data';
 
@@ -74,6 +75,9 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
+          <Link href="/" className="text-xs text-gray-500 hover:text-green-400 transition-colors flex items-center gap-1 mr-4">
+              <ArrowLeft className="w-3 h-3" /> Showcase
+            </Link>
             <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); closeMobileMenu(); }} className="flex items-center gap-3 group">
               <Logo className="h-12 w-auto group-hover:opacity-90 transition-opacity" />
             </a>
@@ -476,6 +480,16 @@ export default function Home() {
       >
         <ArrowUp className="w-5 h-5" />
       </button>
+
+      {/* Choose This Design CTA */}
+      <a
+        href="tel:2397713675"
+        className="fixed bottom-6 left-4 sm:left-8 z-50 bg-green-500 hover:bg-green-400 text-black font-bold py-2.5 px-4 sm:py-3 sm:px-5 rounded-xl flex items-center gap-2 shadow-xl shadow-green-500/30 transition-all duration-300 active:scale-95 animate-[fadeIn_0.5s_ease-out]"
+        aria-label="Choose this design - call developer"
+      >
+        <Phone className="w-4 h-4" />
+        <span className="hidden sm:inline">Like this? Call Dev</span>
+      </a>
 
     </div>
   );

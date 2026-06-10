@@ -1,8 +1,9 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, MapPin, ChevronRight, Axe, Scissors, Zap, AlertCircle, Trash2, Check, X, ArrowUp, MessageCircle, Sun, Trees } from 'lucide-react';
+import { Phone, MapPin, ChevronRight, Axe, Scissors, Zap, AlertCircle, Trash2, Check, X, ArrowUp, MessageCircle, Sun, Trees, ArrowLeft } from 'lucide-react';
 import { services as serviceData, serviceAreas, portfolioImages } from '@/app/data';
 
   const serviceIcons: Record<number, React.ComponentType<{ className?: string }>> = {
@@ -57,6 +58,10 @@ export default function LightTheme() {
       <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-amber-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
+            <div className="flex items-center gap-4">
+            <Link href="/" className="text-xs text-stone-500 hover:text-amber-600 transition-colors flex items-center gap-1">
+              <ArrowLeft className="w-3 h-3" /> Showcase
+            </Link>
             <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); closeMobileMenu(); }} className="flex items-center gap-3">
               <div className="w-10 h-10 bg-gradient-to-br from-amber-500 to-green-600 rounded-xl flex items-center justify-center shadow-md">
                 <Trees className="w-6 h-6 text-white" />
@@ -66,6 +71,7 @@ export default function LightTheme() {
                 <p className="text-xs text-amber-600 font-semibold">Licensed &amp; Insured</p>
               </div>
             </a>
+            </div>
 
             <div className="hidden md:flex items-center gap-8">
               {['Services', 'Service Areas', 'Portfolio'].map(item => (
@@ -310,6 +316,16 @@ export default function LightTheme() {
       <button onClick={scrollToTop} className={`fixed bottom-8 right-8 z-50 w-12 h-12 bg-amber-600 hover:bg-amber-500 text-white rounded-full flex items-center justify-center shadow-lg transition-all active:scale-90 ${showBackToTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`} aria-label="Back to top">
         <ArrowUp className="w-5 h-5" />
       </button>
+
+      {/* Choose This Design CTA */}
+      <a
+        href="tel:2397713675"
+        className="fixed bottom-6 left-4 sm:left-8 z-50 bg-green-500 hover:bg-green-400 text-black font-bold py-2.5 px-4 sm:py-3 sm:px-5 rounded-xl flex items-center gap-2 shadow-xl shadow-green-500/30 transition-all duration-300 active:scale-95 animate-[fadeIn_0.5s_ease-out]"
+        aria-label="Choose this design - call developer"
+      >
+        <Phone className="w-4 h-4" />
+        <span className="hidden sm:inline">Like this? Call Dev</span>
+      </a>
 
     </div>
   );

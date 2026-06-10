@@ -1,8 +1,9 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, MapPin, Axe, Scissors, Zap, AlertCircle, Trash2, X, ArrowUp, Phone, MessageCircle } from 'lucide-react';
+import { ArrowRight, MapPin, Axe, Scissors, Zap, AlertCircle, Trash2, X, ArrowUp, Phone, MessageCircle, ArrowLeft } from 'lucide-react';
 import Logo from '@/app/logo';
 import { services as serviceData, serviceAreas, portfolioImages } from '@/app/data';
 
@@ -55,9 +56,14 @@ export default function MinimalTheme() {
       <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
+            <div className="flex items-center gap-4">
+            <Link href="/" className="text-xs text-gray-400 hover:text-blue-600 transition-colors flex items-center gap-1">
+              <ArrowLeft className="w-3 h-3" /> Showcase
+            </Link>
             <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); closeMobileMenu(); }} className="flex-shrink-0">
               <Logo className="h-9 w-auto" />
             </a>
+            </div>
             <div className="hidden md:flex items-center gap-10">
               {['Services','Areas','Portfolio'].map(i => (
                 <a key={i} href={`#${i.toLowerCase().replace('areas','areas')}`} className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors tracking-wide uppercase">{i === 'Areas' ? 'Service Areas' : i}</a>
@@ -267,6 +273,16 @@ export default function MinimalTheme() {
       <button onClick={scrollToTop} className={`fixed bottom-8 right-8 z-50 w-12 h-12 bg-gray-900 hover:bg-gray-800 text-white rounded-full flex items-center justify-center shadow-lg transition-all active:scale-90 ${showBackToTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
         <ArrowUp className="w-5 h-5" />
       </button>
+
+      {/* Choose This Design CTA */}
+      <a
+        href="tel:2397713675"
+        className="fixed bottom-6 left-4 sm:left-8 z-50 bg-blue-600 hover:bg-blue-500 text-white font-bold py-2.5 px-4 sm:py-3 sm:px-5 rounded-xl flex items-center gap-2 shadow-xl shadow-blue-500/20 transition-all duration-300 active:scale-95 animate-[fadeIn_0.5s_ease-out]"
+        aria-label="Choose this design - call developer"
+      >
+        <Phone className="w-4 h-4" />
+        <span className="hidden sm:inline">Like this? Call Dev</span>
+      </a>
 
     </div>
   );

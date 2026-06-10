@@ -1,8 +1,9 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, MapPin, ChevronRight, Axe, Scissors, Zap, AlertCircle, Trash2, X, ArrowUp, MessageCircle, Shield, Star } from 'lucide-react';
+import { Phone, MapPin, ChevronRight, Axe, Scissors, Zap, AlertCircle, Trash2, X, ArrowUp, MessageCircle, Shield, Star, ArrowLeft } from 'lucide-react';
 import Logo from '@/app/logo';
 import { services as serviceData, serviceAreas, portfolioImages } from '@/app/data';
 
@@ -57,9 +58,14 @@ export default function BoldTheme() {
       <nav className="fixed top-0 w-full z-50 bg-slate-950/90 backdrop-blur-md border-b border-amber-500/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
+            <div className="flex items-center gap-4">
+            <Link href="/" className="text-xs text-slate-500 hover:text-amber-400 transition-colors flex items-center gap-1">
+              <ArrowLeft className="w-3 h-3" /> Showcase
+            </Link>
             <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); closeMobileMenu(); }} className="flex-shrink-0">
               <Logo className="h-12 w-auto" />
             </a>
+            </div>
             <div className="hidden md:flex items-center gap-8">
               {['Services', 'Service Areas', 'Portfolio'].map(item => (
                 <a key={item} href={`#${item.toLowerCase().replace(/\s+/g, '-').replace('service-areas', 'areas')}`}
@@ -305,6 +311,16 @@ export default function BoldTheme() {
       <button onClick={scrollToTop} className={`fixed bottom-8 right-8 z-50 w-12 h-12 bg-amber-500 hover:bg-amber-400 text-slate-900 rounded-full flex items-center justify-center shadow-xl shadow-amber-500/20 transition-all active:scale-90 ${showBackToTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
         <ArrowUp className="w-5 h-5" />
       </button>
+
+      {/* Choose This Design CTA */}
+      <a
+        href="tel:2397713675"
+        className="fixed bottom-6 left-4 sm:left-8 z-50 bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold py-2.5 px-4 sm:py-3 sm:px-5 rounded-xl flex items-center gap-2 shadow-xl shadow-amber-500/20 transition-all duration-300 active:scale-95 animate-[fadeIn_0.5s_ease-out]"
+        aria-label="Choose this design - call developer"
+      >
+        <Phone className="w-4 h-4" />
+        <span className="hidden sm:inline">Like this? Call Dev</span>
+      </a>
 
     </div>
   );
