@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, MapPin, ChevronRight, Axe, Scissors, Zap, AlertCircle, Trash2, X, ArrowUp, MessageCircle, Shield, Star, ArrowLeft, Trophy } from 'lucide-react';
+import { Phone, MapPin, ChevronRight, Axe, Scissors, Zap, AlertCircle, Trash2, X, ArrowUp, MessageCircle, Star, ArrowLeft, Trophy } from 'lucide-react';
 import Logo from '@/app/logo';
 import { services as serviceData, serviceAreas, portfolioImages } from '@/app/data';
 import AnimatedCounter from '@/app/animated-counter';
@@ -74,10 +74,12 @@ export default function BoldTheme() {
                   ))}
                 </div>
               </div>
-              <div className="relative hidden md:block reveal">
-                <div className="relative bg-gradient-to-br from-green-500 via-green-600 to-emerald-700 rounded-2xl h-96 flex items-center justify-center shadow-2xl shadow-green-500/20 overflow-hidden">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.15)_0%,transparent_70%)]" /><Shield className="w-24 h-24 text-slate-900/20" />
-                  <div className="absolute inset-4 border border-white/20 rounded-xl" /><div className="absolute inset-8 border border-white/10 rounded-lg" />
+              <div className="relative hidden md:grid grid-cols-2 gap-3 reveal h-96">
+                <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-green-500/20 border border-slate-800">
+                  <Image src="/IMG_1361.jpeg" alt="Tree Care of SWFL — Professional Equipment" fill className="object-cover hover:scale-105 transition-transform duration-700" sizes="(max-width: 768px) 50vw, 300px" />
+                </div>
+                <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-green-500/20 border border-slate-800">
+                  <Image src="/IMG_1524.jpeg" alt="Tree Care of SWFL — Our Team" fill className="object-cover hover:scale-105 transition-transform duration-700" sizes="(max-width: 768px) 50vw, 300px" />
                 </div>
               </div>
             </div>

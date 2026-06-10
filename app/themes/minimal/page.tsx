@@ -70,6 +70,17 @@ export default function MinimalTheme() {
           </div>
         </section>
 
+        <section className="py-12 px-6 max-w-6xl mx-auto reveal">
+          <div className="grid grid-cols-2 gap-4 md:gap-6 h-64 md:h-80">
+            <div className="relative rounded overflow-hidden shadow-md border border-gray-200">
+              <Image src="/IMG_1361.jpeg" alt="Tree Care of SWFL — Professional Equipment" fill className="object-cover hover:scale-105 transition-transform duration-700" sizes="(max-width: 768px) 50vw, 400px" />
+            </div>
+            <div className="relative rounded overflow-hidden shadow-md border border-gray-200">
+              <Image src="/IMG_1524.jpeg" alt="Tree Care of SWFL — Our Team" fill className="object-cover hover:scale-105 transition-transform duration-700" sizes="(max-width: 768px) 50vw, 400px" />
+            </div>
+          </div>
+        </section>
+
         <div className="border-y border-blue-100 bg-blue-50/50 py-3 overflow-hidden">
           <div className="flex animate-[marquee_25s_linear_infinite] whitespace-nowrap">
             {[...trustSignals, ...trustSignals].map((s, i) => (<span key={i} className="inline-flex items-center gap-2 mx-6 text-sm text-blue-600/50 font-medium"><Trophy className="w-3.5 h-3.5 text-blue-400/40" />{s}</span>))}

@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, MapPin, ChevronRight, Axe, Scissors, Zap, AlertCircle, Trash2, Check, X, ArrowUp, MessageCircle, ArrowLeft, Trophy, Contrast } from 'lucide-react';
+import { Phone, MapPin, ChevronRight, Axe, Scissors, Zap, AlertCircle, Trash2, Check, X, ArrowUp, MessageCircle, ArrowLeft, Trophy } from 'lucide-react';
 import Logo from '@/app/logo';
 import { services, serviceAreas, portfolioImages } from '@/app/data';
 import AnimatedCounter from '@/app/animated-counter';
@@ -96,11 +96,12 @@ export default function BlackWhiteTheme() {
                   ))}
                 </div>
               </div>
-              <div className="relative hidden md:block reveal">
-                <div className="relative bg-black rounded-none h-96 flex items-center justify-center shadow-2xl shadow-black/10 overflow-hidden">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.05)_0%,rgba(0,0,0,0.8)_100%)]" />
-                  <Contrast className="w-24 h-24 text-white/10" />
-                  <div className="absolute inset-4 border border-white/20" /><div className="absolute inset-8 border border-white/10" />
+              <div className="relative hidden md:grid grid-cols-2 gap-3 reveal h-96">
+                <div className="relative overflow-hidden shadow-xl border-2 border-black grayscale hover:grayscale-0 transition-all duration-700">
+                  <Image src="/IMG_1361.jpeg" alt="Tree Care of SWFL — Professional Equipment" fill className="object-cover hover:scale-105 transition-transform duration-700" sizes="(max-width: 768px) 50vw, 300px" />
+                </div>
+                <div className="relative overflow-hidden shadow-xl border-2 border-black grayscale hover:grayscale-0 transition-all duration-700">
+                  <Image src="/IMG_1524.jpeg" alt="Tree Care of SWFL — Our Team" fill className="object-cover hover:scale-105 transition-transform duration-700" sizes="(max-width: 768px) 50vw, 300px" />
                 </div>
               </div>
             </div>
