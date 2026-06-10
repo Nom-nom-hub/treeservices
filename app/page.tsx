@@ -444,17 +444,6 @@ export default function ShowcaseLanding() {
         <Phone className="w-5 h-5" /> <span>Let&apos;s Go: {DEV_PHONE_DISPLAY}</span>
       </a>
 
-      {/* ============ GLOBAL STYLES ============ */}
-      <style jsx global>{`
-        @keyframes shimmer {
-          0% { background-position: 200% 0; }
-          100% { background-position: -200% 0; }
-        }
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-      `}</style>
     </div>
   );
 }
