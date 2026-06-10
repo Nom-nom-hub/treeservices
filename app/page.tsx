@@ -181,7 +181,7 @@ export default function ShowcaseLanding() {
 
           {/* Stats */}
           <div className="reveal mt-16 grid grid-cols-3 gap-6 max-w-lg mx-auto" style={{ transitionDelay: '0.6s' }}>
-            {[{ n: '4', l: 'Unique Themes' }, { n: '100%', l: 'Mobile Ready' }, { n: '24h', l: 'Turnaround' }].map((s, i) => (
+            {[{ n: '4', l: 'Unique Themes' }, { n: '100%', l: 'Mobile Ready' }, { n: '10 min', l: 'Turnaround' }].map((s, i) => (
               <div key={i} className="text-center">
                 <p className="text-3xl font-black text-white">{s.n}</p>
                 <p className="text-xs text-gray-500 mt-1 uppercase tracking-wider">{s.l}</p>
