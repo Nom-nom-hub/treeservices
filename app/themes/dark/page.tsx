@@ -126,7 +126,7 @@ export default function Home() {
                       <div className="mb-4 group-hover:scale-110 transition-transform duration-300"><IconComponent className="w-12 h-12 text-green-500" /></div>
                       <h3 className="text-lg font-bold text-white mb-2">{service.title}</h3>
                       <p className="text-gray-400 text-sm leading-relaxed">{service.description}</p>
-                      <div className="mt-4 flex items-center text-green-400 font-semibold group-hover:translate-x-2 transition-transform text-sm">Learn more <ChevronRight className="w-4 h-4 ml-1" /></div>
+                      <a href="#contact" className="mt-4 flex items-center text-green-400 font-semibold group-hover:translate-x-2 transition-transform text-sm cursor-pointer">Learn more <ChevronRight className="w-4 h-4 ml-1" /></a>
                     </div>
                   </div>
                 );

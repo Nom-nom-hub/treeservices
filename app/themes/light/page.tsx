@@ -104,7 +104,7 @@ export default function LightTheme() {
                 <div className="relative bg-stone-50 rounded-2xl p-6 h-full border border-stone-200 group-hover:border-green-300 transition-colors">
                   <div className="mb-4 w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center group-hover:bg-green-200 transition-colors"><Icon className="w-6 h-6 text-green-700" /></div>
                   <h3 className="text-lg font-bold text-stone-800 mb-2">{s.title}</h3><p className="text-stone-500 text-sm leading-relaxed">{s.description}</p>
-                  <div className="mt-4 flex items-center text-green-600 font-semibold group-hover:translate-x-2 transition-transform text-sm">Learn more <ChevronRight className="w-4 h-4 ml-1" /></div>
+                  <a href="#contact" className="mt-4 flex items-center text-green-600 font-semibold group-hover:translate-x-2 transition-transform text-sm cursor-pointer">Learn more <ChevronRight className="w-4 h-4 ml-1" /></a>
                 </div>
               </div>);
             })}

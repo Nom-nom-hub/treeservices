@@ -101,7 +101,7 @@ export default function BoldTheme() {
                 <div className="relative bg-slate-900 rounded-xl p-6 h-full border border-slate-800 group-hover:border-green-500/30 transition-colors">
                   <div className="mb-4"><Icon className="w-10 h-10 text-green-500 group-hover:scale-110 transition-transform" /></div>
                   <h3 className="text-lg font-bold text-white mb-2">{s.title}</h3><p className="text-slate-400 text-sm leading-relaxed">{s.description}</p>
-                  <div className="mt-4 flex items-center text-green-400 font-semibold group-hover:translate-x-2 transition-transform text-sm">Learn more <ChevronRight className="w-4 h-4 ml-1" /></div>
+                  <a href="#contact" className="mt-4 flex items-center text-green-400 font-semibold group-hover:translate-x-2 transition-transform text-sm cursor-pointer">Learn more <ChevronRight className="w-4 h-4 ml-1" /></a>
                 </div>
               </div>);
             })}

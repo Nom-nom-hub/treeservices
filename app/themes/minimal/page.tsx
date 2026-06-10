@@ -96,7 +96,7 @@ export default function MinimalTheme() {
                 <div className="relative bg-white rounded p-6 h-full border border-gray-200 group-hover:border-blue-200 transition-colors">
                   <div className="mb-4"><Icon className="w-8 h-8 text-blue-600" /></div>
                   <h3 className="text-base font-bold text-gray-900 mb-2">{s.title}</h3><p className="text-sm text-gray-500 leading-relaxed mb-4">{s.description}</p>
-                  <ArrowRight className="w-4 h-4 text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <a href="#contact" className="inline-block"><ArrowRight className="w-4 h-4 text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer" /></a>
                 </div>
               </div>);
             })}

@@ -129,7 +129,7 @@ export default function BlackWhiteTheme() {
                       <div className="mb-4 group-hover:scale-110 transition-transform duration-300"><IconComponent className="w-12 h-12 text-black" /></div>
                       <h3 className="text-lg font-black text-black mb-2 uppercase tracking-tight">{service.title}</h3>
                       <p className="text-gray-400 text-sm leading-relaxed font-light">{service.description}</p>
-                      <div className="mt-4 flex items-center text-black font-bold group-hover:translate-x-2 transition-transform text-sm uppercase tracking-wider">Learn more <ChevronRight className="w-4 h-4 ml-1" /></div>
+                      <a href="#contact" className="mt-4 flex items-center text-black font-bold group-hover:translate-x-2 transition-transform text-sm uppercase tracking-wider cursor-pointer">Learn more <ChevronRight className="w-4 h-4 ml-1" /></a>
                     </div>
                   </div>
                 );
