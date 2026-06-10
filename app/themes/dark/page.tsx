@@ -44,7 +44,7 @@ export default function Home() {
           <div className="flex items-center justify-between h-20">
             <div className="flex items-center gap-4">
             <Link href="/" className="text-xs text-gray-500 hover:text-green-400 transition-colors flex items-center gap-1"><ArrowLeft className="w-3 h-3" /> Showcase</Link>
-            <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); closeMobileMenu(); }} className="flex items-center gap-3 group"><Logo className="h-12 w-auto group-hover:opacity-90 transition-opacity" /></a>
+            <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); closeMobileMenu(); }} className="flex items-center gap-3 group"><Logo className="h-16 w-auto group-hover:opacity-90 transition-opacity" /></a>
             </div>
             <div className="hidden md:flex items-center gap-8">
               {['Services', 'Service Areas', 'Portfolio'].map(item => (<a key={item} href={`#${item.toLowerCase().replace(/\s+/g, '-').replace('service-areas', 'areas')}`} className="relative text-gray-300 hover:text-green-400 font-medium text-sm transition-colors py-1 group">{item}<span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-500 group-hover:w-full transition-all duration-300" /></a>))}
@@ -189,7 +189,7 @@ export default function Home() {
 
       <footer className="bg-gray-950 text-gray-400 py-12 px-4 border-t border-green-600/30">
         <div className="max-w-7xl mx-auto"><div className="grid md:grid-cols-4 gap-8 mb-8">
-          <div className="reveal"><Logo className="h-12 w-auto mb-4" /><p className="text-sm text-gray-500 leading-relaxed">Professional tree care serving Southwest Florida since 1991. Licensed &amp; Insured.</p></div>
+          <div className="reveal"><Logo className="h-16 w-auto mb-4" /><p className="text-sm text-gray-500 leading-relaxed">Professional tree care serving Southwest Florida since 1991. Licensed &amp; Insured.</p></div>
           <div className="reveal" style={{ transitionDelay: '0.1s' }}><h4 className="font-semibold text-white mb-4">Services</h4><ul className="space-y-2 text-sm">{['Tree Removal', 'Tree Trimming', 'Stump Grinding', 'Emergency Service'].map(item => (<li key={item}><a href="#services" className="hover:text-green-400 transition-colors">{item}</a></li>))}</ul></div>
           <div className="reveal" style={{ transitionDelay: '0.2s' }}><h4 className="font-semibold text-white mb-4">Quick Links</h4><ul className="space-y-2 text-sm">{['Services', 'Service Areas', 'Portfolio', 'Contact'].map(item => (<li key={item}><a href={`#${item.toLowerCase().replace(' ', '-').replace('service-areas', 'areas')}`} className="hover:text-green-400 transition-colors">{item}</a></li>))}</ul></div>
           <div className="reveal" style={{ transitionDelay: '0.3s' }}><h4 className="font-semibold text-white mb-4">Contact</h4><a href="tel:2399440073" className="block text-sm mb-2 hover:text-green-400 transition-colors">(239) 944-0073</a><a href="sms:2399440073" className="block text-sm hover:text-green-400 transition-colors">Text Us</a></div>

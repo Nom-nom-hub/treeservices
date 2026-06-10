@@ -31,7 +31,7 @@ export default function MinimalTheme() {
         <div className="max-w-6xl mx-auto px-6 lg:px-8"><div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-4">
             <Link href="/" className="text-xs text-gray-400 hover:text-blue-600 transition-colors flex items-center gap-1"><ArrowLeft className="w-3 h-3" /> Showcase</Link>
-            <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); closeMobileMenu(); }} className="flex-shrink-0"><Logo className="h-9 w-auto" /></a>
+            <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); closeMobileMenu(); }} className="flex-shrink-0"><Logo className="h-16 w-auto" /></a>
           </div>
           <div className="hidden md:flex items-center gap-10">
             {['Services','Areas','Portfolio'].map(i => (<a key={i} href={`#${i.toLowerCase().replace('areas','areas')}`} className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors tracking-wide uppercase">{i === 'Areas' ? 'Service Areas' : i}</a>))}
@@ -126,7 +126,7 @@ export default function MinimalTheme() {
 
       <footer className="bg-gray-900 text-gray-400 py-12 px-6">
         <div className="max-w-6xl mx-auto"><div className="grid md:grid-cols-4 gap-8 mb-8">
-          <div className="reveal"><Logo className="h-10 w-auto mb-4 opacity-90" /><p className="text-sm">Professional tree care since 1991. Licensed &amp; Insured.</p></div>
+          <div className="reveal"><Logo className="h-14 w-auto mb-4 opacity-90" /><p className="text-sm">Professional tree care since 1991. Licensed &amp; Insured.</p></div>
           <div className="reveal" style={{ transitionDelay: '0.1s' }}><h4 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">Services</h4><ul className="space-y-2 text-sm">{['Tree Removal','Tree Trimming','Stump Grinding','Emergency'].map(i => <li key={i}><a href="#services" className="hover:text-white transition-colors">{i}</a></li>)}</ul></div>
           <div className="reveal" style={{ transitionDelay: '0.2s' }}><h4 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">Links</h4><ul className="space-y-2 text-sm">{['Services','Service Areas','Portfolio','Contact'].map(i => <li key={i}><a href={`#${i.toLowerCase().replace(' ','-').replace('service-areas','areas')}`} className="hover:text-white transition-colors">{i}</a></li>)}</ul></div>
           <div className="reveal" style={{ transitionDelay: '0.3s' }}><h4 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">Contact</h4><a href="tel:2399440073" className="block text-sm mb-2 hover:text-white transition-colors">(239) 944-0073</a><a href="sms:2399440073" className="block text-sm hover:text-white transition-colors">Text Us</a></div>

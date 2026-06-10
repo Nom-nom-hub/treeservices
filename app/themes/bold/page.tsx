@@ -32,7 +32,7 @@ export default function BoldTheme() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div className="flex items-center justify-between h-20">
           <div className="flex items-center gap-4">
             <Link href="/" className="text-xs text-slate-500 hover:text-green-400 transition-colors flex items-center gap-1"><ArrowLeft className="w-3 h-3" /> Showcase</Link>
-            <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); closeMobileMenu(); }} className="flex-shrink-0"><Logo className="h-12 w-auto" /></a>
+            <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); closeMobileMenu(); }} className="flex-shrink-0"><Logo className="h-16 w-auto" /></a>
           </div>
           <div className="hidden md:flex items-center gap-8">
             {['Services', 'Service Areas', 'Portfolio'].map(item => (<a key={item} href={`#${item.toLowerCase().replace(/\s+/g, '-').replace('service-areas', 'areas')}`} className="text-sm font-medium text-slate-300 hover:text-green-400 transition-colors uppercase tracking-wider">{item}</a>))}
@@ -140,7 +140,7 @@ export default function BoldTheme() {
 
       <footer className="bg-slate-950 text-slate-400 py-12 px-4 border-t border-green-500/10">
         <div className="max-w-7xl mx-auto"><div className="grid md:grid-cols-4 gap-8 mb-8">
-          <div className="reveal"><Logo className="h-12 w-auto mb-4" /><p className="text-sm leading-relaxed">Professional tree care since 1991. Licensed, insured, and dedicated to excellence.</p></div>
+          <div className="reveal"><Logo className="h-16 w-auto mb-4" /><p className="text-sm leading-relaxed">Professional tree care since 1991. Licensed, insured, and dedicated to excellence.</p></div>
           <div className="reveal" style={{ transitionDelay: '0.1s' }}><h4 className="font-bold text-white mb-4 uppercase tracking-wider text-xs">Services</h4><ul className="space-y-2 text-sm">{['Tree Removal','Tree Trimming','Stump Grinding','Emergency Service'].map(i => <li key={i}><a href="#services" className="hover:text-green-400 transition-colors">{i}</a></li>)}</ul></div>
           <div className="reveal" style={{ transitionDelay: '0.2s' }}><h4 className="font-bold text-white mb-4 uppercase tracking-wider text-xs">Quick Links</h4><ul className="space-y-2 text-sm">{['Services','Service Areas','Portfolio','Contact'].map(i => <li key={i}><a href={`#${i.toLowerCase().replace(' ','-').replace('service-areas','areas')}`} className="hover:text-green-400 transition-colors">{i}</a></li>)}</ul></div>
           <div className="reveal" style={{ transitionDelay: '0.3s' }}><h4 className="font-bold text-white mb-4 uppercase tracking-wider text-xs">Contact</h4><a href="tel:2399440073" className="block text-sm mb-2 hover:text-green-400 transition-colors">(239) 944-0073</a><a href="sms:2399440073" className="block text-sm hover:text-green-400 transition-colors">Text Us</a></div>
