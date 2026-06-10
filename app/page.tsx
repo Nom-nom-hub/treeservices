@@ -188,7 +188,7 @@ export default function Home() {
       </nav>
 
       {/* Emergency Banner */}
-      <div className="fixed top-20 w-full bg-red-600 text-white py-3 px-4 text-center font-semibold z-40 md:relative md:top-0 md:mt-0 flex items-center justify-center gap-2">
+      <div className="fixed top-20 w-full bg-red-600 text-white py-3 px-4 text-center font-semibold z-40 md:relative md:top-0 md:mt-20 flex items-center justify-center gap-2">
         <span className="relative flex h-2.5 w-2.5">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
           <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white" />
@@ -199,7 +199,7 @@ export default function Home() {
       {/* Main Content */}
       <main id="main-content" aria-hidden={!!lightboxImage}>
         {/* Hero Section */}
-        <section className="relative pt-40 pb-20 px-4 bg-gradient-to-b from-gray-900 to-black overflow-hidden">
+        <section className="relative pt-28 md:pt-32 pb-20 px-4 bg-gradient-to-b from-gray-900 to-black overflow-hidden">
           {/* Background Glow */}
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-green-900/20 rounded-full blur-[128px] pointer-events-none" />
           <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-green-800/10 rounded-full blur-[96px] pointer-events-none" />
