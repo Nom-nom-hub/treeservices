@@ -5,7 +5,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import {
   Sparkles, Leaf, Zap, Crown, ArrowRight, Palette, ChevronDown,
   Phone, Check, Monitor, Smartphone, Eye, Code, Star, MessageCircle,
-  ExternalLink, MousePointerClick, Layers, Clock, Shield, Heart, Trophy, TrendingUp, Users
+  ExternalLink, MousePointerClick, Layers, Clock, Shield, Heart, Trophy, TrendingUp, Users, Contrast
 } from 'lucide-react';
 
 const DEV_PHONE = '2397713675';
@@ -41,6 +41,12 @@ const themeCardClasses: Record<string, {
     watermark: 'text-amber-600/10', badge: 'bg-amber-500/10 border-amber-500/30', badgeText: 'text-amber-400',
     shimmer: 'from-amber-500/0 via-amber-400/20 to-amber-500/0',
   },
+  bw: {
+    border: 'border-black/30', borderHover: 'hover:border-black', glow: 'hover:shadow-black/20',
+    previewBg: 'bg-gradient-to-br from-white via-gray-50 to-white', previewAccent: 'bg-black',
+    watermark: 'text-gray-200', badge: 'bg-black border-black', badgeText: 'text-white',
+    shimmer: 'from-black/0 via-black/5 to-black/0',
+  },
 };
 
 const themes = [
@@ -48,6 +54,7 @@ const themes = [
   { id: 'light' as const, name: 'Light & Natural', tagline: 'Warm. Organic. Inviting.', description: 'A bright, airy design with warm earth tones. Cream backgrounds, wood-inspired accents, and a welcoming feel that builds trust through transparency.', icon: Leaf, features: ['Warm earth palette', 'Subtle grid texture', 'Organic rounded shapes', 'Bright & airy feel'] },
   { id: 'minimal' as const, name: 'Modern Minimal', tagline: 'Clean. Crisp. Precise.', description: 'A white-on-white masterpiece with bold typography and a single electric blue accent. Maximum whitespace, minimal noise.', icon: Sparkles, features: ['Bold typography', 'Single accent color', 'Maximum whitespace', 'Clean sharp lines'] },
   { id: 'bold' as const, name: 'Bold Professional', tagline: 'Premium. Authoritative. Elite.', description: 'A commanding navy and gold palette that radiates authority. Premium typography, gold accents, and a presence that says "we\'re the best."', icon: Crown, features: ['Navy & gold palette', 'Premium typography', 'Authoritative feel', 'Luxury accents'] },
+  { id: 'bw' as const, name: 'Black & White', tagline: 'Stark. Timeless. Unforgettable.', description: 'Pure high-contrast monochrome. Bold typography, razor-sharp borders, and an editorial aesthetic that commands attention without a single color.', icon: Contrast, features: ['Pure monochrome', 'Bold typography', 'Grayscale gallery', 'Editorial feel'] },
 ];
 
 const trustSignals = ['33+ Years Experience', '62 Five-Star Reviews', 'Licensed & Insured', 'Family Owned', '24/7 Emergency Service', 'Serving SWFL Since 1991'];
@@ -176,7 +183,7 @@ export default function ShowcaseLanding() {
           <p className="reveal text-lg sm:text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-4 leading-relaxed font-light" style={{ transitionDelay: '0.2s' }}>
             You&apos;ve built something incredible with {BIZ_NAME}.{' '}
             <span className="text-white font-medium">Your online presence should match.</span>
-            {' '}Four premium designs — pick the one that feels like you.
+            {' '}Five premium designs — pick the one that feels like you.
           </p>
           <p className="reveal text-sm text-gray-600 mb-12" style={{ transitionDelay: '0.3s' }}>
             Built for speed. Optimized for mobile. Deployable in 10 minutes flat.
@@ -218,7 +225,7 @@ export default function ShowcaseLanding() {
 
           {/* Animated Stats */}
           <div className="reveal mt-16 grid grid-cols-3 gap-6 max-w-lg mx-auto" style={{ transitionDelay: '0.6s' }}>
-            {[{ target: '4', label: 'Unique Themes', icon: Palette }, { target: '100%', label: 'Mobile Ready', icon: Smartphone }, { target: '10 min', label: 'Turnaround', icon: Zap }].map((s, i) => (
+            {[{ target: '5', label: 'Unique Themes', icon: Palette }, { target: '100%', label: 'Mobile Ready', icon: Smartphone }, { target: '10 min', label: 'Turnaround', icon: Zap }].map((s, i) => (
               <div key={i} className="text-center group">
                 <s.icon className="w-5 h-5 text-green-500 mx-auto mb-2 opacity-50 group-hover:opacity-100 transition-opacity" />
                 <p className="text-3xl font-black text-white">
@@ -252,7 +259,7 @@ export default function ShowcaseLanding() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 reveal">
             <p className="text-green-400 text-sm font-bold uppercase tracking-[0.2em] mb-4">Curated for You</p>
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-4">Four Designs. One Perfect Fit.</h2>
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-4">Five Designs. One Perfect Fit.</h2>
             <p className="text-lg text-gray-400 max-w-xl mx-auto">
               Each theme is complete and production-ready — same content, services, and contact info. The only difference is the <span className="text-white">feel</span>.
             </p>
@@ -262,17 +269,18 @@ export default function ShowcaseLanding() {
             {themes.map((theme, idx) => {
               const IconComponent = theme.icon;
               const cls = themeCardClasses[theme.id];
+              const isLight = theme.id === 'light' || theme.id === 'minimal' || theme.id === 'bw';
               return (
                 <div key={theme.id} className="reveal group relative rounded-3xl p-[1.5px] transition-all duration-500 hover:-translate-y-1" style={{ transitionDelay: `${idx * 0.1}s` }}>
                   {/* Shimmer border */}
                   <div className={`absolute inset-0 rounded-3xl bg-gradient-to-r ${cls.shimmer} opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-[shimmer_2s_linear_infinite] bg-[length:200%_100%]`} />
                   <div className={`relative rounded-3xl overflow-hidden border ${cls.border} transition-all duration-500 hover:shadow-2xl ${cls.glow}`}>
-                    <div className={`grid lg:grid-cols-5 ${theme.id === 'light' || theme.id === 'minimal' ? 'bg-white text-gray-900' : 'bg-gray-900'}`}>
+                    <div className={`grid lg:grid-cols-5 ${isLight ? 'bg-white text-gray-900' : 'bg-gray-900'}`}>
                       {/* Preview panel */}
-                      <div className={`lg:col-span-2 relative ${cls.previewBg} min-h-[280px] flex items-center justify-center overflow-hidden border-b lg:border-b-0 lg:border-r ${theme.id === 'light' || theme.id === 'minimal' ? 'border-gray-200' : 'border-white/10'}`}>
-                        <div className={`absolute top-0 left-0 right-0 h-10 ${theme.id === 'light' || theme.id === 'minimal' ? 'bg-gray-100' : 'bg-black/40'} flex items-center px-4 gap-2 backdrop-blur-sm`}>
+                      <div className={`lg:col-span-2 relative ${cls.previewBg} min-h-[280px] flex items-center justify-center overflow-hidden border-b lg:border-b-0 lg:border-r ${isLight ? 'border-gray-200' : 'border-white/10'}`}>
+                        <div className={`absolute top-0 left-0 right-0 h-10 ${isLight ? 'bg-gray-100' : 'bg-black/40'} flex items-center px-4 gap-2 backdrop-blur-sm`}>
                           <div className="w-3 h-3 rounded-full bg-red-500/60" /><div className="w-3 h-3 rounded-full bg-yellow-500/60" /><div className="w-3 h-3 rounded-full bg-green-500/60" />
-                          <div className={`ml-3 w-32 h-2 rounded-full ${theme.id === 'light' || theme.id === 'minimal' ? 'bg-gray-300' : 'bg-white/10'} opacity-50`} />
+                          <div className={`ml-3 w-32 h-2 rounded-full ${isLight ? 'bg-gray-300' : 'bg-white/10'} opacity-50`} />
                         </div>
                         <div className="mt-8 flex flex-col items-center gap-3 w-3/4">
                           <div className={`w-full h-6 rounded ${theme.id === 'dark' ? 'bg-white/10' : theme.id === 'bold' ? 'bg-white/10' : 'bg-gray-300'} opacity-60`} />
@@ -287,25 +295,25 @@ export default function ShowcaseLanding() {
                       {/* Info panel */}
                       <div className="lg:col-span-3 p-8 lg:p-10 flex flex-col justify-center">
                         <div className="flex items-start gap-4 mb-4">
-                          <div className={`w-12 h-12 ${theme.id === 'light' || theme.id === 'minimal' ? 'bg-gray-100' : 'bg-white/10'} rounded-2xl flex items-center justify-center flex-shrink-0`}>
-                            <IconComponent className={`w-6 h-6 ${(theme.id === 'light' || theme.id === 'minimal') ? 'text-gray-700' : 'text-green-400'}`} />
+                          <div className={`w-12 h-12 ${isLight ? 'bg-gray-100' : 'bg-white/10'} rounded-2xl flex items-center justify-center flex-shrink-0`}>
+                            <IconComponent className={`w-6 h-6 ${isLight ? 'text-gray-700' : 'text-green-400'}`} />
                           </div>
                           <div>
-                            <h3 className={`text-2xl font-black ${theme.id === 'light' || theme.id === 'minimal' ? 'text-gray-900' : 'text-white'} mb-1`}>{theme.name}</h3>
+                            <h3 className={`text-2xl font-black ${isLight ? 'text-gray-900' : 'text-white'} mb-1`}>{theme.name}</h3>
                             <p className="text-sm text-gray-500 font-medium">{theme.tagline}</p>
                           </div>
                         </div>
-                        <p className={`text-sm leading-relaxed mb-6 ${theme.id === 'light' || theme.id === 'minimal' ? 'text-gray-500' : 'text-gray-400'}`}>{theme.description}</p>
+                        <p className={`text-sm leading-relaxed mb-6 ${isLight ? 'text-gray-500' : 'text-gray-400'}`}>{theme.description}</p>
                         <div className="grid grid-cols-2 gap-2 mb-6">
                           {theme.features.map((f, fi) => (
-                            <div key={fi} className={`flex items-center gap-2 text-xs ${theme.id === 'light' || theme.id === 'minimal' ? 'text-gray-600' : 'text-gray-400'}`}>
-                              <Check className={`w-3.5 h-3.5 ${theme.id === 'light' || theme.id === 'minimal' ? 'text-green-600' : 'text-green-500'} flex-shrink-0`} /> {f}
+                            <div key={fi} className={`flex items-center gap-2 text-xs ${isLight ? 'text-gray-600' : 'text-gray-400'}`}>
+                              <Check className={`w-3.5 h-3.5 ${isLight ? 'text-green-600' : 'text-green-500'} flex-shrink-0`} /> {f}
                             </div>
                           ))}
                         </div>
                         <div className="flex flex-col sm:flex-row gap-3">
                           <Link href={`/themes/${theme.id}`}
-                            className={`flex-1 inline-flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-semibold text-sm transition-all active:scale-95 ${theme.id === 'light' || theme.id === 'minimal' ? 'bg-gray-900 text-white hover:bg-gray-800' : 'bg-white/10 text-white hover:bg-white/20'}`}>
+                            className={`flex-1 inline-flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-semibold text-sm transition-all active:scale-95 ${isLight ? 'bg-gray-900 text-white hover:bg-gray-800' : 'bg-white/10 text-white hover:bg-white/20'}`}>
                             <Eye className="w-4 h-4" /> View Full Preview <ExternalLink className="w-3 h-3 opacity-50" />
                           </Link>
                           <a href={`tel:${DEV_PHONE}`}
@@ -372,7 +380,7 @@ export default function ShowcaseLanding() {
                 ].map((row, ri) => (
                   <tr key={ri} className="hover:bg-white/5 transition-colors">
                     <td className="p-5"><div className="flex items-center gap-2"><row.icon className="w-4 h-4 text-gray-500" /><span className="text-gray-300">{row.feature}</span></div></td>
-                    {[0, 1, 2, 3].map(vi => (<td key={vi} className="p-5 text-center"><Check className="w-5 h-5 text-green-500 mx-auto" /></td>))}
+                    {[0, 1, 2, 3, 4].map(vi => (<td key={vi} className="p-5 text-center"><Check className="w-5 h-5 text-green-500 mx-auto" /></td>))}
                   </tr>
                 ))}
                 <tr className="border-t border-white/10">
