@@ -1,0 +1,44 @@
+<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark circular background -->
+  <circle cx="32" cy="32" r="30" fill="#0a0a0a" stroke="#22c55e" stroke-width="1.5"/>
+
+  <!-- Palm Tree -->
+  <g transform="translate(10, 6)">
+    <!-- Trunk -->
+    <path
+      d="M22 50 Q24 32 20 22 Q17 12 22 4"
+      stroke="url(#palmGradientFav)"
+      stroke-width="5"
+      stroke-linecap="round"
+      fill="none"
+    />
+    <!-- Trunk segments -->
+    <path d="M20 44 Q18 42 20 40" stroke="#22c55e" stroke-width="1.2" opacity="0.5" fill="none"/>
+    <path d="M21 37 Q19 35 21 33" stroke="#22c55e" stroke-width="1.2" opacity="0.5" fill="none"/>
+    <path d="M22 30 Q20 28 22 26" stroke="#22c55e" stroke-width="1.2" opacity="0.5" fill="none"/>
+    <path d="M21 23 Q19 21 21 19" stroke="#22c55e" stroke-width="1.2" opacity="0.5" fill="none"/>
+
+    <!-- Fronds -->
+    <path d="M22 4 Q12 -6 0 -8 Q10 0 8 6 Q2 2 0 8 Z" fill="#22c55e" opacity="0.5"/>
+    <path d="M22 4 Q8 -12 0 -18 Q8 -12 10 -6 Q4 -12 0 -10 Z" fill="#22c55e" opacity="0.6"/>
+    <path d="M22 4 Q16 -14 12 -22 Q18 -14 20 -6 Q16 -12 14 -8 Z" fill="#22c55e" opacity="0.7"/>
+    <path d="M22 4 Q28 -14 32 -22 Q26 -14 24 -6 Q28 -12 30 -8 Z" fill="#22c55e" opacity="0.7"/>
+    <path d="M22 4 Q36 -8 44 -12 Q36 -4 32 2 Q40 -4 44 0 Z" fill="#22c55e" opacity="0.6"/>
+    <path d="M22 4 Q42 4 50 8 Q40 4 34 6 Q42 8 46 14 Z" fill="#22c55e" opacity="0.5"/>
+
+    <!-- Center hub -->
+    <circle cx="22" cy="3" r="4.5" fill="url(#hubGradientFav)"/>
+    <circle cx="22" cy="3" r="2.5" fill="#15803d"/>
+  </g>
+
+  <defs>
+    <linearGradient id="palmGradientFav" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4ade80"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+    <radialGradient id="hubGradientFav">
+      <stop offset="0%" stop-color="#4ade80"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </radialGradient>
+  </defs>
+</svg>
