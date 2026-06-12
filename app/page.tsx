@@ -168,8 +168,8 @@ export default function Home() {
         </div>
       </nav>
 
-      <div className="emergency-banner fixed top-24 w-full bg-gradient-to-r from-red-600 via-red-500 to-red-600 text-white py-3 px-4 text-center font-semibold z-40 md:relative md:top-0 md:mt-24 flex items-center justify-center gap-3 shadow-md">
-        <span className="relative flex h-3 w-3"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" /><span className="relative inline-flex rounded-full h-3 w-3 bg-white" /></span>
+      <div className="emergency-banner fixed top-24 w-full bg-gradient-to-r from-red-600 via-red-500 to-red-600 text-white py-2 sm:py-3 px-3 sm:px-4 text-xs sm:text-sm text-center font-semibold z-40 md:relative md:top-0 md:mt-24 flex items-center justify-center gap-1.5 sm:gap-3 shadow-md">
+        <span className="relative flex h-2 w-2 sm:h-3 sm:w-3"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" /><span className="relative inline-flex rounded-full h-2 w-2 sm:h-3 sm:w-3 bg-white" /></span>
         <span>24/7 Emergency Tree Service Available</span>
         <a href="tel:2399440073" className="underline underline-offset-2 decoration-white/50 hover:decoration-white font-bold">Call (239) 944-0073</a>
       </div>
@@ -262,13 +262,34 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="bg-footer text-text-dim py-12 px-4">
-        <div className="max-w-7xl mx-auto"><div className="grid md:grid-cols-4 gap-8 mb-8">
-          <div className="reveal"><Logo className="h-24 w-auto mb-4 brightness-0 invert" /><p className="text-sm leading-relaxed">Professional tree care serving Southwest Florida since 1991. Licensed &amp; insured.</p></div>
-          <div className="reveal" style={{ transitionDelay: '0.1s' }}><h4 className="font-semibold text-on-accent mb-4">Services</h4><ul className="space-y-2 text-sm">{['Tree Removal','Tree Trimming','Stump Grinding','Emergency Service'].map(i => <li key={i}><a href="#services" className="hover:text-accent transition-colors">{i}</a></li>)}</ul></div>
-          <div className="reveal" style={{ transitionDelay: '0.2s' }}><h4 className="font-semibold text-on-accent mb-4">Quick Links</h4><ul className="space-y-2 text-sm">{['Services','Service Areas','Portfolio','Contact'].map(i => <li key={i}><a href={`#${i.toLowerCase().replace(' ','-').replace('service-areas','areas')}`} className="hover:text-accent transition-colors">{i}</a></li>)}</ul></div>
-          <div className="reveal" style={{ transitionDelay: '0.3s' }}><h4 className="font-semibold text-on-accent mb-4">Contact</h4><a href="tel:2399440073" className="block text-sm mb-2 hover:text-accent transition-colors">(239) 944-0073</a><a href="sms:2399440073" className="block text-sm hover:text-accent transition-colors">Text Us</a></div>
-        </div><div className="border-t border-border-strong pt-8 text-center text-sm"><p>&copy; 2026 Tree Care of SWFL LLC. All rights reserved. Licensed &amp; Insured.</p></div></div>
+      <footer className="site-footer px-4 py-12">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <p className="text-sm leading-relaxed body-text">Professional tree care serving Southwest Florida since 1991. Licensed &amp; insured.</p>
+            </div>
+            <div>
+              <h4 className="font-semibold heading-text mb-4">Services</h4>
+              <ul className="space-y-2 text-sm">
+                {['Tree Removal','Tree Trimming','Stump Grinding','Emergency Service'].map(i => <li key={i}><a href="#services" className="body-text hover:text-green-600 dark:hover:text-green-400 transition-colors">{i}</a></li>)}
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold heading-text mb-4">Quick Links</h4>
+              <ul className="space-y-2 text-sm">
+                {[['Services','#services'],['Service Areas','#areas'],['Portfolio','#portfolio'],['Contact','#contact']].map(([label, href]) => <li key={label}><a href={href} className="body-text hover:text-green-600 dark:hover:text-green-400 transition-colors">{label}</a></li>)}
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold heading-text mb-4">Contact</h4>
+              <a href="tel:2399440073" className="block text-sm body-text mb-2 hover:text-green-600 dark:hover:text-green-400 transition-colors">(239) 944-0073</a>
+              <a href="sms:2399440073" className="block text-sm body-text hover:text-green-600 dark:hover:text-green-400 transition-colors">Text Us</a>
+            </div>
+          </div>
+          <div className="border-t border-stone-300 dark:border-stone-700 pt-8 text-center text-sm text-stone-500 dark:text-stone-500">
+            &copy; 2026 Tree Care of SWFL LLC. All rights reserved. Licensed &amp; Insured.
+          </div>
+        </div>
       </footer>
 
       {lightboxImage && (

@@ -81,6 +81,32 @@
   background: linear-gradient(to right, #7f1d1d, #991b1b, #7f1d1d) !important;
 }
 
+.site-footer {
+  background: #f5f5f4;
+  border-top: 1px solid #d6d3d1;
+}
+
+.dark .site-footer {
+  background: #000000;
+  border-top-color: #44403c;
+}
+
+.site-footer .heading-text {
+  color: #1c1917;
+}
+
+.dark .site-footer .heading-text {
+  color: #fafaf9;
+}
+
+.site-footer .body-text {
+  color: #78716c;
+}
+
+.dark .site-footer .body-text {
+  color: #a8a29e;
+}
+
 html {
   scroll-behavior: smooth;
 }
