@@ -1,14 +1,95 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import Image from 'next/image';
-import { Phone, MapPin, ChevronRight, Axe, Scissors, Zap, AlertCircle, Trash2, Check, X, ArrowUp, MessageCircle, Trophy, Sun, Moon } from 'lucide-react';
+import { Phone, MapPin, ChevronRight, Axe, Scissors, Zap, AlertCircle, Trash2, Check, X, ArrowUp, MessageCircle, Trophy, Sun, Moon, TreeDeciduous } from 'lucide-react';
 import Logo from '@/app/logo';
 import { services as serviceData, serviceAreas, portfolioImages } from '@/app/data';
 import AnimatedCounter from '@/app/animated-counter';
 
 const serviceIcons: Record<number, React.ComponentType<{ className?: string }>> = { 0: Axe, 1: Scissors, 2: Zap, 3: AlertCircle, 4: Trash2 };
 const trustSignals = ['33+ Years Experience', '62 Five-Star Reviews', 'Licensed & Insured', 'Family Owned', '24/7 Emergency Service', 'Serving SWFL Since 1991'];
+
+function CustomCursor() {
+  const cursorRef = useRef<HTMLDivElement>(null);
+  const shownRef = useRef(false);
+  const [visible, setVisible] = useState(false);
+  const [hovering, setHovering] = useState(false);
+
+  useEffect(() => {
+    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    if (isTouch) return;
+
+    const move = (e: MouseEvent) => {
+      if (cursorRef.current) {
+        cursorRef.current.style.transform = `translate(${e.clientX - 14}px, ${e.clientY - 14}px)`;
+      }
+      if (!shownRef.current) {
+        shownRef.current = true;
+        setVisible(true);
+      }
+    };
+
+    const isInteractive = (el: HTMLElement | null) =>
+      el && el.closest('a, button, [role="button"], input, select, textarea, label');
+
+    const over = (e: MouseEvent) => {
+      if (isInteractive(e.target as HTMLElement)) {
+        setHovering(true);
+      }
+    };
+
+    const out = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const related = e.relatedTarget as HTMLElement | null;
+      if (isInteractive(target) && !isInteractive(related)) {
+        setHovering(false);
+      }
+    };
+
+    document.addEventListener('mousemove', move);
+    document.addEventListener('mouseover', over);
+    document.addEventListener('mouseout', out);
+
+    document.body.style.cursor = 'none';
+
+    return () => {
+      document.removeEventListener('mousemove', move);
+      document.removeEventListener('mouseover', over);
+      document.removeEventListener('mouseout', out);
+      document.body.style.cursor = '';
+    };
+  }, []);
+
+  if (!visible) return null;
+
+  return (
+    <div
+      ref={cursorRef}
+      className="fixed top-0 left-0 z-[9999] pointer-events-none transition-[width,height] duration-200"
+      style={{
+        width: hovering ? 44 : 28,
+        height: hovering ? 44 : 28,
+      }}
+    >
+      {/* Glow ring */}
+      <div
+        className="absolute inset-0 rounded-full transition-all duration-200"
+        style={{
+          background: hovering
+            ? 'radial-gradient(circle, rgba(34,197,94,0.35) 0%, transparent 70%)'
+            : 'radial-gradient(circle, rgba(34,197,94,0.18) 0%, transparent 70%)',
+          transform: hovering ? 'scale(1.4)' : 'scale(1)',
+        }}
+      />
+      {/* Tree icon */}
+      <TreeDeciduous
+        className="absolute inset-0 w-full h-full p-0.5 text-accent transition-all duration-200"
+        style={{ transform: hovering ? 'scale(1.15)' : 'scale(1)' }}
+      />
+    </div>
+  );
+}
 
 function ThemeToggle() {
   const [dark, setDark] = useState(false);
@@ -57,6 +138,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-accent-subtle via-card to-accent-subtle/30">
+      <CustomCursor />
       <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:bg-accent focus:text-on-accent focus:px-4 focus:py-2 focus:rounded-lg">Skip to content</a>
 
       <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled ? 'bg-card/95 backdrop-blur-xl border-b border-border-accent-strong shadow-lg' : 'bg-card/70 backdrop-blur-sm border-b border-transparent shadow-none'}`}>
@@ -86,7 +168,7 @@ export default function Home() {
         </div>
       </nav>
 
-      <div className="fixed top-24 w-full bg-gradient-to-r from-red-600 via-red-500 to-red-600 text-white py-3 px-4 text-center font-semibold z-40 md:relative md:top-0 md:mt-24 flex items-center justify-center gap-3 shadow-md">
+      <div className="emergency-banner fixed top-24 w-full bg-gradient-to-r from-red-600 via-red-500 to-red-600 text-white py-3 px-4 text-center font-semibold z-40 md:relative md:top-0 md:mt-24 flex items-center justify-center gap-3 shadow-md">
         <span className="relative flex h-3 w-3"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" /><span className="relative inline-flex rounded-full h-3 w-3 bg-white" /></span>
         <span>24/7 Emergency Tree Service Available</span>
         <a href="tel:2399440073" className="underline underline-offset-2 decoration-white/50 hover:decoration-white font-bold">Call (239) 944-0073</a>

@@ -77,6 +77,10 @@
   --border-accent-strong: #15803d;
 }
 
+.dark .emergency-banner {
+  background: linear-gradient(to right, #7f1d1d, #991b1b, #7f1d1d) !important;
+}
+
 html {
   scroll-behavior: smooth;
 }
